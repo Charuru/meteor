@@ -424,7 +424,7 @@ _.extend(Bundle.prototype, {
 
     var combinedCode = codeParts.join('\n;\n');
     var finalCode = uglify.minify(
-      combinedCode, {fromString: true, compress: {drop_debugger: false}}).code;
+      combinedCode, {mangle: false, fromString: true, compress: {drop_debugger: false}}).code;
 
     addFile('js', finalCode);
 
